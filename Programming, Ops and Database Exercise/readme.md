@@ -12,4 +12,5 @@ This repo contains two(2) key folders
   3. Products Never Ordered.
   4. Average Order Value by country.
   5. Frequent Buyers.
-  
+
+This exercise is currently running [here](http://54.171.82.173:5000/).
