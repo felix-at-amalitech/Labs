@@ -1,5 +1,8 @@
+
 DROP TABLE IF EXISTS greyshop.customers;
 
+CREATE DATABASE IF NOT EXISTS greyshop;
+USE greyshop;
 -- create customers table -- 
 CREATE TABLE greyshop.customers ( 
 customer_id INT PRIMARY KEY, 
