@@ -1,0 +1,127 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1746387320491
+  modified: 1746387320491
+collection:
+  - name: Programming Ops and Database
+    meta:
+      id: fld_952731d37de149c5b02da3f68f363c85
+      created: 1746387741153
+      modified: 1746387741153
+      sortKey: -1746387741153
+    children:
+      - url: http://54.171.82.173:5000/reports/top_customers
+        name: Get Top Customers by Spending
+        meta:
+          id: req_e31fb53bec664374ac5ef64edcd2fcb7
+          created: 1746387496570
+          modified: 1746450091873
+          isPrivate: false
+          sortKey: -1746387749430
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://54.171.82.173:5000/reports/monthly_sales
+        name: Monthly Sales Report (Shipped/Delivered)
+        meta:
+          id: req_e8653b55549347ba964561e055b4fe57
+          created: 1746387816944
+          modified: 1746450107203
+          isPrivate: false
+          sortKey: -1746387749380
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://54.171.82.173:5000/reports/products_never_ordered
+        name: " Products Never Ordered"
+        meta:
+          id: req_09437274c2954ac6a39331b3d73f157e
+          created: 1746387860396
+          modified: 1746450119214
+          isPrivate: false
+          sortKey: -1746387749330
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://54.171.82.173:5000/reports/aov_by_country
+        name: Average Order Value by Country
+        meta:
+          id: req_27d395f60b3a4beaa11e900604484795
+          created: 1746387907056
+          modified: 1746450146534
+          isPrivate: false
+          sortKey: -1746387749280
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://54.171.82.173:5000/reports/frequent_buyers
+        name: Frequent Buyers (More Than One Order)
+        meta:
+          id: req_61f9808cf6404bf5b97694df363c7e52
+          created: 1746387948077
+          modified: 1746450156335
+          isPrivate: false
+          sortKey: -1746387749230
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1746387441983
+    modified: 1746387441983
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1746387441308
+    modified: 1746387441308
+    isPrivate: false
