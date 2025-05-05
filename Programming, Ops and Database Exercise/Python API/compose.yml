@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_DATABASE}
+    restart: unless-stopped
+    networks:
+      - host 
+
+networks:
+  host:
+  # This network is used to connect to the host network, allowing the container to access the host's network stack.
