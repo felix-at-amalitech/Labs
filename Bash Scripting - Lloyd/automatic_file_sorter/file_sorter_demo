@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This script creates  a demo directory with various file types for testing the file_sorter.py script.
+
+mkdir -p ./sorter_test_folder && cd ./sorter_test_folder
+
+touch report.docx summary.pdf notes.txt \
+      image1.jpg photo.jpeg graphic.png \
+      movie.mp4 clip.avi \
+      song.mp3 podcast.wav \
+      backup.zip archive.tar.gz \
+      script.py deploy.sh app.js \
+      randomfile.dat noextensionfile
+
+cp report.docx report_copy.docx
