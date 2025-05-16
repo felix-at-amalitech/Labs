@@ -2,19 +2,30 @@
 
 import os
 import shutil
+import logging
 import sys
-from ..utils import custom_logging_config
 from datetime import datetime
 
 # Set up logging
 log_file = f"file_sorter_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-logging = custom_logging_config(log_file=log_file)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler()
+    ])
 
 
-SOURCE_DIR = sys.argv[1] or os.path.expanduser("~/Downloads")  # source directory is either either the first argument or the Downloads folder
+
+# source directory is either the first argument or the Downloads folder
+SOURCE_DIR = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser("~/Downloads")
 
 if not os.path.exists(SOURCE_DIR):
     logging.error(f"Invalid source directory: {SOURCE_DIR}")
+    sys.exit(1)
+
+    # define the categories and their corresponding file extensions
 CATEGORIES = {
     'Documents': ['.pdf', '.doc', '.docx', '.txt', '.odt', '.rtf'],
     'Images': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff'],
@@ -22,7 +33,7 @@ CATEGORIES = {
     'Music': ['.mp3', '.wav', '.flac', '.aac'],
     'Archives': ['.zip', '.rar', '.tar', '.gz', '.7z'],
     'Scripts': ['.py', '.sh', '.js', '.java', '.cpp'],
-    'Others': []  # handles files that don't match any of the above categories 
+    'Others': []  # handles files that don't match any of the above categories
 }
 
 def create_subfolders(base_dir):
@@ -56,8 +67,13 @@ def sort_files(source_dir):
         file_path = os.path.join(source_dir, filename)
 
         # Skip directories and this script
-        if os.path.isdir(file_path) or filename == os.path.basename(__file__):
-            continue
+        if not os.path.isfile(file_path):
+            continue  # skip directories, symlinks, etc.
+
+        script_path = os.path.realpath(__file__)
+        if os.path.realpath(file_path) == script_path:
+            continue  # skip the script file itself
+
 
         try:
             # Get file extension
