@@ -1,7 +1,6 @@
 import os
 import argparse
 from datetime import datetime
-import re
 
 def parse_arguments():
     """Parse command-line arguments for the file renaming tool."""
@@ -51,7 +50,8 @@ def generate_new_filename(args, original_name, counter):
         return new_name + ext
 
     # Otherwise, build name using prefix, suffix, counter, and date
-    components = []
+    components = [part for part in [args.prefix, base_name, args.date, args.counter, args.suffix] if part]
+
     if args.prefix:
         components.append(args.prefix)
     components.append(base_name)
