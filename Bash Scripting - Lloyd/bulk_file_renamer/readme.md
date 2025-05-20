@@ -18,7 +18,9 @@ Python 3.6+
 ### Usage
 
 ```code
-python renamer.py <directory> [options]
+python bulk_file_renamer.py <directory> [options]
+
+eg: python bulk_file_renamer.py test_files --prefix file --counter --preview
 ```
 
 ### Positional Argument
