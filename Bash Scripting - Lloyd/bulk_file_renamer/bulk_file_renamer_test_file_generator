@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# This script generates test files for the bulk file renamer script.
+
+
+mkdir bulk_renamer_test_files
+cd bulk_renamer_test_files
+touch report1.txt report2.txt summary.docx image1.png image2.PNG notes.md
